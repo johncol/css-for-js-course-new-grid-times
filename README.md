@@ -1,3 +1,5 @@
+Note: This repository is a clone of the exercise repository https://github.com/css-for-js/new-grid-times from the course https://courses.joshwcomeau.com/css-for-js
+
 # New Grid Times — Module 7 workshop
 
 In this workshop, our goal is to build a sophisticated, responsive grid layout for an online newspaper, the New Grid Times:
