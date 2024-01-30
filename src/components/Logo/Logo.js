@@ -22,7 +22,8 @@ const Wrapper = styled.div`
 
 const Link = styled.a`
   font-family: var(--font-family-logo);
-  font-size: 3rem;
+  font-size: min(3rem, 14vw);
+  white-space: nowrap;
 
   @media ${QUERIES.tabletAndUp} {
     font-size: calc(64rem / 16);
