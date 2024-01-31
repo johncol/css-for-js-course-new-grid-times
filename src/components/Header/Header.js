@@ -92,14 +92,14 @@ const MainHeader = styled(MaxWidthWrapper)`
   justify-content: space-between;
   align-items: center;
 
-  margin: 2rem 0 3rem;
+  margin: 2rem auto 3rem;
 
   @media ${QUERIES.tabletAndUp} {
-    margin: 3rem 0 4rem;
+    margin: 3rem auto 4rem;
   }
 
   @media ${QUERIES.laptopAndUp} {
-    margin: 1rem 0 4rem;
+    margin: 1rem auto 4rem;
   }
 `;
 
