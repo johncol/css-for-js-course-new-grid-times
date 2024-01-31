@@ -1,25 +1,18 @@
 import React from "react";
 import styled from "styled-components/macro";
+import LinkToStory from "../LinkToStory";
 
 const SecondaryStory = ({ id, title, image, location, abstract }) => {
   return (
-    <Link href={`/story/${id}`}>
+    <LinkToStory href={`/story/${id}`}>
       <Wrapper>
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
         <Abstract>{abstract}</Abstract>
       </Wrapper>
-    </Link>
+    </LinkToStory>
   );
 };
-
-const Link = styled.a`
-  padding: 1rem 0;
-
-  &:not(:last-of-type) {
-    border-bottom: 1px solid var(--color-gray-300);
-  }
-`;
 
 const Wrapper = styled.article`
   display: grid;

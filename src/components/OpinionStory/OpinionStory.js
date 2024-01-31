@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { QUERIES } from "../../constants";
+import LinkToStory from "../LinkToStory";
 
 const OpinionStory = ({ id, title, author, avatar }) => {
   return (
-    <Link href={`/story/${id}`}>
+    <LinkToStory href={`/story/${id}`}>
       <Wrapper>
         <Avatar alt="" src={avatar} />
         <OpinionContent>
@@ -12,17 +13,9 @@ const OpinionStory = ({ id, title, author, avatar }) => {
           <ArticleTitle>{title}</ArticleTitle>
         </OpinionContent>
       </Wrapper>
-    </Link>
+    </LinkToStory>
   );
 };
-
-const Link = styled.a`
-  padding: 1rem 0;
-
-  &:not(:last-of-type) {
-    border-bottom: 1px solid var(--color-gray-300);
-  }
-`;
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
