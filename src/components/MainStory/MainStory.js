@@ -19,7 +19,7 @@ const MainStory = ({
       <Abstract>
         <Location>{location}</Location> — {abstract}
       </Abstract>
-      <ReadMore href="/story">Continue Reading…</ReadMore>
+      <ReadMore href="/story">Continue Reading</ReadMore>
     </Wrapper>
   );
 };
