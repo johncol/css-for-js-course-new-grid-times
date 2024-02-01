@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { QUERIES } from "../../constants";
-import LinkToStory from "../LinkToStory";
 
 const OpinionStory = ({ id, title, author, avatar }) => {
   return (
@@ -16,6 +15,26 @@ const OpinionStory = ({ id, title, author, avatar }) => {
     </LinkToStory>
   );
 };
+
+const LinkToStory = styled.a`
+  &:not(:first-of-type) {
+    padding-top: var(--bordered-spacing);
+  }
+
+  &:not(:last-of-type) {
+    padding-bottom: var(--bordered-spacing);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: var(--grid-border);
+  }
+
+  @media ${QUERIES.tabletOnly} {
+    &:not(:last-of-type) {
+      border-bottom: revert;
+    }
+  }
+`;
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);

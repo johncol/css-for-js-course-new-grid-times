@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import LinkToStory from "../LinkToStory";
+import { QUERIES } from "../../constants";
 
 const SecondaryStory = ({ id, title, image, location, abstract }) => {
   return (
@@ -14,14 +14,36 @@ const SecondaryStory = ({ id, title, image, location, abstract }) => {
   );
 };
 
+const LinkToStory = styled.a`
+  &:not(:first-of-type) {
+    padding-top: var(--bordered-spacing);
+  }
+
+  &:not(:last-of-type) {
+    padding-bottom: var(--bordered-spacing);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: var(--grid-border);
+  }
+`;
+
 const Wrapper = styled.article`
   display: grid;
   grid-template-areas:
     "image heading"
     "image abstract";
-  gap: 4px 16px;
+  gap: .25rem 1rem;
   grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
+
+  @media ${QUERIES.tabletOnly} {
+    grid-template-areas:
+      "image"
+      "heading"
+      "abstract";
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Image = styled.img`
