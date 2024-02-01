@@ -4,6 +4,7 @@ import styled from 'styled-components/macro';
 import MaxWidthWrapper from '../MaxWidthWrapper';
 
 import VisuallyHidden from '../VisuallyHidden';
+import { QUERIES } from '../../constants';
 
 const Footer = () => {
   return (
@@ -139,16 +140,26 @@ const TopRow = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
   color: var(--color-gray-300);
   font-size: 0.875rem;
   border-bottom: 1px solid var(--color-gray-700);
   padding: 24px 0;
+
+  @media ${QUERIES.tabletAndUp} {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    justify-content: flex-end;
+  }
 `;
 
 const Social = styled.div`
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
 
   svg {
     display: block;
@@ -161,22 +172,33 @@ const Social = styled.div`
 
 const TopNavList = styled.ul`
   display: flex;
-  gap: 16px;
+  gap: 1rem;
 `;
 
 const MainNavArea = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  padding: 32px 0 48px;
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0 3rem;
   text-align: center;
+
+  @media ${QUERIES.tabletAndUp} {
+    text-align: revert;
+    
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(
+        26ch,
+        1fr
+      )
+    );
+  }
 `;
 
 const MainNavHeading = styled.h2`
   font-size: 1.125rem;
   font-weight: var(--font-weight-bold);
   color: var(--color-gray-300);
-  margin-bottom: 8px;
+  margin-bottom: .5rem;
 `;
 
 const MainNavList = styled.ul`
@@ -187,15 +209,19 @@ const MainNavList = styled.ul`
 
 const SubfooterWrapper = styled.div`
   background: var(--color-offblack);
-  padding: 8px 0px;
+  padding: .5rem 0px;
   /* Optical alignment */
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 `;
 
 const Subfooter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${QUERIES.laptopAndUp} {
+    align-items: flex-start;
+  }
 `;
 
 const Logo = styled.a`
