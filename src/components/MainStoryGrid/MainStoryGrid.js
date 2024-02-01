@@ -20,7 +20,9 @@ const MainStoryGrid = () => {
       <SecondaryStorySection>
         <SecondaryStoryList>
           {SECONDARY_STORIES.map((story, index) => (
-            <SecondaryStory key={story.id} {...story} />
+            <SecondaryStoryWrapper key={story.id}>
+              <SecondaryStory {...story} />
+            </SecondaryStoryWrapper>
           ))}
         </SecondaryStoryList>
       </SecondaryStorySection>
@@ -29,7 +31,9 @@ const MainStoryGrid = () => {
         <SectionTitle>Opinion</SectionTitle>
         <OpinionStoryList>
           {OPINION_STORIES.map((story, index) => (
-            <OpinionStory key={story.id} {...story} />
+            <OpinionStoryWrapper key={story.id}>
+              <OpinionStory {...story} />
+            </OpinionStoryWrapper>
           ))}
         </OpinionStoryList>
       </OpinionSection>
@@ -56,17 +60,17 @@ const Grid = styled.div`
 
   @media ${QUERIES.tabletOnly} {
     grid-template-areas:
-      "main-story      secondary-stories"
-      "advertisement   advertisement"
-      "opinion-stories opinion-stories";
+      "main-story        secondary-stories"
+      "advertisement     advertisement"
+      "opinion-stories   opinion-stories";
     grid-template-columns: 2fr minmax(24ch, 1fr);
     gap: var(--spacing) 0;
   }
 
   @media ${QUERIES.laptopAndUp} {
     grid-template-areas:
-      "main-story   secondary-stories opinion-stories"
-      "main-story   advertisement     advertisement";
+      "main-story   secondary-stories   opinion-stories"
+      "main-story   advertisement       advertisement";
     grid-template-columns: 5fr 4fr minmax(25ch, 3fr);
     gap: 0;
   }
@@ -110,6 +114,40 @@ const AdvertisementSection = styled.section`
     margin-top: var(--bordered-spacing);
     padding-top: var(--bordered-spacing);
     border-top: var(--grid-border);
+  }
+`;
+
+const SecondaryStoryWrapper = styled.div`
+  &:not(:first-of-type) {
+    padding-top: var(--bordered-spacing);
+  }
+
+  &:not(:last-of-type) {
+    padding-bottom: var(--bordered-spacing);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: var(--grid-border);
+  }
+`;
+
+const OpinionStoryWrapper = styled.div`
+  &:not(:first-of-type) {
+    padding-top: var(--bordered-spacing);
+  }
+
+  &:not(:last-of-type) {
+    padding-bottom: var(--bordered-spacing);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: var(--grid-border);
+  }
+
+  @media ${QUERIES.tabletOnly} {
+    &:not(:last-of-type) {
+      border-bottom: revert;
+    }
   }
 `;
 

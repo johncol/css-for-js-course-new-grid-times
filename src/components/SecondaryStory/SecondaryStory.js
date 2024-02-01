@@ -4,29 +4,15 @@ import { QUERIES } from "../../constants";
 
 const SecondaryStory = ({ id, title, image, location, abstract }) => {
   return (
-    <LinkToStory href={`/story/${id}`}>
+    <a href={`/story/${id}`}>
       <Wrapper>
         <Image alt={image.alt} src={image.src} />
         <Heading>{title}</Heading>
         <Abstract>{abstract}</Abstract>
       </Wrapper>
-    </LinkToStory>
+    </a>
   );
 };
-
-const LinkToStory = styled.a`
-  &:not(:first-of-type) {
-    padding-top: var(--bordered-spacing);
-  }
-
-  &:not(:last-of-type) {
-    padding-bottom: var(--bordered-spacing);
-  }
-
-  &:not(:last-of-type) {
-    border-bottom: var(--grid-border);
-  }
-`;
 
 const Wrapper = styled.article`
   display: grid;
