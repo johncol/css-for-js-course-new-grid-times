@@ -94,6 +94,7 @@ const SecondaryStorySection = styled.section`
 
   @media ${QUERIES.laptopAndUp} {
     padding-right: var(--bordered-spacing);
+    border-right: var(--grid-border);
   }
 `;
 
@@ -102,7 +103,7 @@ const OpinionSection = styled.section`
 
   @media ${QUERIES.laptopAndUp} {
     padding-left: var(--bordered-spacing);
-    border-left: var(--grid-border);
+    margin-top: -0.75rem;
   }
 `;
 
