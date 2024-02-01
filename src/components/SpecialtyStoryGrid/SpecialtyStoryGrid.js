@@ -46,15 +46,26 @@ const SpecialtyStoryGrid = () => {
 
 const Wrapper = styled.div`
   display: grid;
-  gap: 48px;
+  gap: 3rem;
 `;
 
 const MarketsSection = styled.section``;
 
-const MarketCards = styled.div``;
-
 const SportsSection = styled.section``;
 
-const SportsStories = styled.div``;
+const FlexibleGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(
+      min(100%, 11rem), 1fr
+    )
+  );
+  gap: 1rem;
+`;
+
+const MarketCards = styled(FlexibleGrid)``;
+
+const SportsStories = styled(FlexibleGrid)``;
 
 export default SpecialtyStoryGrid;
